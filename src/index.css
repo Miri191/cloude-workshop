@@ -2,22 +2,23 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
-  font-family: 'Rubik', Arial, sans-serif;
-  background: #e9e7f0;
-  color: #1b1a2e;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #e6e6e6;
+  color: #242424;
   -webkit-font-smoothing: antialiased;
 }
 .device {
-  width: 390px;
-  min-height: 844px;
+  width: 375px;
+  min-height: 812px;
   margin: 24px auto;
-  background: #f7f6fb;
+  background: #f3f3f3;
   border-radius: 32px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 8px;
   padding-inline: 24px;
 }
-.device h1 { font-size: 24px; margin: 0 0 8px; }
-.device p { font-size: 16px; line-height: 1.5; margin: 0; color: #5f5c74; }
+.device h1 { font-family: 'Rubik', Arial, sans-serif; font-size: 24px; margin: 0; }
+.device p { font-family: 'Rubik', Arial, sans-serif; font-size: 16px; line-height: 1.5; margin: 0; color: #707070; }
