@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Financy — ארנק</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Google+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <div class="phone theme-midnight">
+
+    <!-- Status bar -->
+    <div class="status-bar" aria-hidden="true">
+      <img class="sb-notch" src="assets/notch.svg" width="32" height="32" alt="" />
+      <img class="sb-time" src="assets/time.svg" width="54" height="21" alt="" />
+      <img class="sb-signal" src="assets/mobile-signal.svg" width="17" height="10.667" alt="" />
+      <img class="sb-wifi" src="assets/wifi.svg" width="15.2725" height="10.966" alt="" />
+      <img class="sb-battery-outline" src="assets/battery-outline.svg" width="22" height="11.3333" alt="" />
+      <img class="sb-battery-cap" src="assets/battery-cap.svg" width="1.32804" height="4" alt="" />
+      <img class="sb-battery-fill" src="assets/battery-fill.svg" width="18" height="7.33333" alt="" />
+    </div>
+
+    <!-- Header -->
+    <header class="h-bar">
+      <img class="h-avatar" src="assets/profile-pic.png" width="44" height="44" alt="תמונת פרופיל" />
+      <h1 class="h-bar-title">ארנק</h1>
+      <button class="h-icon-btn" type="button" aria-label="אפשרויות נוספות">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="0.75"/><circle cx="12" cy="12" r="0.75"/><circle cx="12" cy="18.5" r="0.75"/></svg>
+      </button>
+    </header>
+
+    <main class="h-content">
+
+      <!-- Cards -->
+      <section class="h-cards" aria-label="כרטיסים">
+        <button type="button" class="h-add-card" aria-label="הוספת כרטיס">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+        </button>
+
+        <article class="h-bank-card h-bank-card--dark">
+          <span class="h-orb h-orb--card" aria-hidden="true"></span>
+          <span class="h-ring h-ring--card" aria-hidden="true"></span>
+          <div class="h-bank-top">
+            <div class="h-bank-balance">
+              <span class="h-on-dark-muted">יתרה כוללת</span>
+              <span class="h-bank-amount">$10,000.00</span>
+            </div>
+            <img class="h-bank-logo h-bank-logo--light" src="assets/card-logo.svg" width="48" height="12" alt="לוגו כרטיס" />
+          </div>
+          <p class="h-bank-number"><span>1234</span><span>••••</span><span>••••</span><span>3456</span></p>
+          <div class="h-bank-foot">
+            <div><span class="h-on-dark-muted">שם</span><span class="h-bank-meta">Zarror Nibros</span></div>
+            <div class="h-align-end"><span class="h-on-dark-muted">תוקף</span><span class="h-bank-meta">09/23</span></div>
+          </div>
+        </article>
+
+        <article class="h-bank-card">
+          <div class="h-bank-top">
+            <div class="h-bank-balance">
+              <span class="h-muted">יתרה כוללת</span>
+              <span class="h-bank-amount">$15,000.40</span>
+            </div>
+            <img class="h-bank-logo" src="assets/card-logo.svg" width="48" height="12" alt="לוגו כרטיס" />
+          </div>
+          <p class="h-bank-number"><span>1234</span><span>••••</span><span>••••</span><span>3456</span></p>
+          <div class="h-bank-foot">
+            <div><span class="h-muted">שם</span><span class="h-bank-meta">Zarror Nibros</span></div>
+            <div class="h-align-end"><span class="h-muted">תוקף</span><span class="h-bank-meta">09/23</span></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Transactions -->
+      <section class="h-section">
+        <div class="h-section-head h-section-head--center">
+          <h2>תנועות</h2>
+          <button class="h-icon-btn" type="button" aria-label="סינון תנועות">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h2"/><path d="M10 17h10"/><circle cx="8" cy="17" r="2"/></svg>
+          </button>
+        </div>
+        <ul class="h-tx-list">
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="3"/><path d="M2.5 19h19"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">Dribbble</span><span class="h-muted">דמי מנוי</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$15.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">דירה</span><span class="h-muted">חיסכון</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$50.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 11a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">מצלמת Sony</span><span class="h-muted">קניות</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$200.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10.5h18"/><path d="M7 15h3"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">Paypal</span><span class="h-muted">משכורת</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$32.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">רכב</span><span class="h-muted">חיסכון</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$40.00</bdi></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Savings -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>חיסכון</h2>
+          <a class="h-link" href="savings.html">הצג הכול</a>
+        </div>
+        <ul class="h-tx-list">
+          <li><a class="h-tx h-save-row" href="savings.html" style="--progress:50%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="3" width="11" height="18" rx="3"/><path d="M10.5 18h3"/></svg></span>
+            <span class="h-save-row-body">
+              <span class="h-save-row-head"><span class="h-tx-name">Iphone 13 Mini</span><span class="h-tx-amount">$699.00</span></span>
+              <span class="h-progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </a></li>
+          <li><a class="h-tx h-save-row" href="savings.html" style="--progress:50%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="3"/><path d="M2.5 19h19"/></svg></span>
+            <span class="h-save-row-body">
+              <span class="h-save-row-head"><span class="h-tx-name">Macbook Pro M1</span><span class="h-tx-amount">$1,499.00</span></span>
+              <span class="h-progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </a></li>
+          <li><a class="h-tx h-save-row" href="savings.html" style="--progress:50%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M10 21v-5h4v5"/></svg></span>
+            <span class="h-save-row-body">
+              <span class="h-save-row-head"><span class="h-tx-name">דירה</span><span class="h-tx-amount">$65,000.00</span></span>
+              <span class="h-progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </a></li>
+          <li><a class="h-tx h-save-row" href="savings.html" style="--progress:50%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8"/><path d="m16 7 2 2"/><path d="m14 9 1.5 1.5"/></svg></span>
+            <span class="h-save-row-body">
+              <span class="h-save-row-head"><span class="h-tx-name">רכב</span><span class="h-tx-amount">$20,000.00</span></span>
+              <span class="h-progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Floating tab bar -->
+    <div class="h-tabbar-wrap">
+      <nav class="h-tabbar" aria-label="ניווט ראשי">
+        <a class="h-tab" href="index.html" aria-label="בית">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a2 2 0 0 1-2 2h-3v-6H9v6H6a2 2 0 0 1-2-2z"/></svg>
+        </a>
+        <a class="h-tab h-tab--active" href="wallet.html" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><path d="M15.5 15h2"/></svg>
+          ארנק
+        </a>
+        <a class="h-tab" href="stats.html" aria-label="סטטיסטיקה">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-3"/><path d="M12 16V8"/><path d="M16 16v-5"/></svg>
+        </a>
+        <a class="h-tab" href="profile.html" aria-label="פרופיל">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.3-3.3 4-5 7-5s5.7 1.7 7 5"/></svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

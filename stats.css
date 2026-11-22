@@ -1,0 +1,89 @@
+/* Statistics screen (stats.html). Builds on theme.css; classes are prefixed s-. */
+
+/* Period switcher: segmented control */
+.s-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 24px;
+  background: var(--h-lilac);
+}
+.s-segment {
+  height: 40px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--h-muted);
+}
+.s-segment:hover { color: var(--h-plum); }
+.s-segment[aria-pressed="true"] { background: var(--h-plum); color: var(--h-paper); }
+
+/* Summary card: this screen's one bold element */
+.s-summary {
+  position: relative;
+  margin: 0 -8px;
+  overflow: clip;
+  border-radius: 28px;
+  background: var(--h-plum);
+  color: var(--h-paper);
+  padding: 24px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.s-summary > :not(.h-orb):not(.h-ring) { position: relative; }
+.h-orb--summary { inset-inline-end: -60px; top: -84px; width: 180px; height: 180px; }
+.h-ring--summary { inset-inline-end: -100px; top: -124px; width: 260px; height: 260px; border: 1px solid rgba(251, 250, 253, 0.18); }
+.s-summary-head { display: flex; flex-direction: column; gap: 6px; }
+.s-summary-head .h-on-dark-muted { font-size: 14px; }
+.s-net { font-size: 44px; font-weight: 500; line-height: 1.1; letter-spacing: -1.2px; }
+
+/* Income vs outcome bars */
+.s-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(251, 250, 253, 0.12);
+}
+.s-compare-row { display: flex; flex-direction: column; gap: 8px; }
+.s-compare-label { display: flex; align-items: center; justify-content: space-between; gap: 12px; white-space: nowrap; }
+.s-compare-name { display: flex; align-items: center; gap: 10px; }
+.s-compare-value { font-size: 17px; font-weight: 500; }
+.s-compare-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--h-plum-2);
+  color: var(--h-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s-bar--light > span { background: var(--h-paper); }
+
+/* Spending breakdown */
+.s-total { display: flex; align-items: baseline; justify-content: space-between; white-space: nowrap; }
+.s-total-value { font-size: 20px; font-weight: 500; letter-spacing: -0.3px; }
+.s-cat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 12px;
+  padding-inline: 12px 16px;
+  border-radius: 18px;
+  background: var(--h-surface);
+  border: 1px solid var(--h-line);
+}
+.s-cat-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.s-cat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; white-space: nowrap; }
+.s-cat-amount { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+
+/* Savings progress */
+.s-goals { display: flex; flex-direction: column; }
+.s-goal { display: flex; flex-direction: column; gap: 10px; padding: 14px 0; }
+.s-goal + .s-goal { border-top: 1px solid var(--h-line); }
+.s-goal-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; white-space: nowrap; }
+.s-goal-name { display: flex; flex-direction: column; gap: 2px; }
+.s-goal-pct { font-size: 16px; font-weight: 500; }

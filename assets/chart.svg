@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chart">
+<path id="Vector 8" d="M8 10L8 16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#A0A0A0"/>
+<path id="Vector 9" d="M12 12V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#A0A0A0"/>
+<path id="Vector 10" d="M16 8V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#A0A0A0"/>
+<path id="Rectangle 25" d="M7 20H17C18.8856 20 19.8284 20 20.4142 19.4142C21 18.8284 21 17.8856 21 16V8C21 6.11438 21 5.17157 20.4142 4.58579C19.8284 4 18.8856 4 17 4H7C5.11438 4 4.17157 4 3.58579 4.58579C3 5.17157 3 6.11438 3 8V16C3 17.8856 3 18.8284 3.58579 19.4142C4.17157 20 5.11438 20 7 20Z" stroke-width="2" stroke="#A0A0A0"/>
+</g>
+</svg>
