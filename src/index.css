@@ -1,24 +1,108 @@
-/* Base only. Design tokens go in design-system/tokens.css and get imported here. */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* Volt theme: yellow (--volt) only ever marks money coming in. */
+.volt {
+  --volt: #e3ff4a;
+  --volt-ink: #1b1e16;
+  --volt-on-volt-muted: #3e4236;
+
+  --volt-page: #f1f2ec;
+  --volt-surface: #ffffff;
+  --volt-raised: #f1f2ec;
+  --volt-text: #1b1e16;
+  --volt-muted: #6b6f62;
+  --volt-progress: #1b1e16;
+  --volt-dot-ring: #1b1e16;
+  --volt-error: #b42318;
+
+  --volt-panel: #1b1e16;
+  --volt-panel-raised: #2c3025;
+  --volt-panel-text: #ffffff;
+  --volt-panel-muted: #a9ae9c;
+
+  --volt-nav: #1b1e16;
+  --volt-nav-border: transparent;
+  --volt-nav-active: #ffffff;
+
+  --volt-income-icon-bg: #ffffff;
+  --volt-income-icon-fg: #1b1e16;
+
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: var(--volt-page);
+  color: var(--volt-text);
+}
+
+.volt[data-theme='dark'] {
+  --volt-page: #121410;
+  --volt-surface: #1f2219;
+  --volt-raised: #2c3025;
+  --volt-text: #f4f6ee;
+  --volt-muted: #a3a898;
+  --volt-progress: #f4f6ee;
+  --volt-dot-ring: #1f2219;
+  --volt-error: #ff8a80;
+
+  --volt-panel: #2a2e22;
+  --volt-panel-raised: #3a3f30;
+  --volt-panel-text: #f4f6ee;
+  --volt-panel-muted: #a3a898;
+
+  --volt-nav: #22251c;
+  --volt-nav-border: #2c3025;
+  --volt-nav-active: #f4f6ee;
+
+  --volt-income-icon-bg: #1b1e16;
+  --volt-income-icon-fg: #e3ff4a;
+}
+
+/* Motion: one intro on the balance panel, plus feedback for what the person does. */
+@keyframes volt-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes volt-pop {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes volt-spin-in {
+  from { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
+.volt-grow {
+  transform-origin: left center;
+  animation: volt-grow 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.volt-pop {
+  animation: volt-pop 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.volt-spin-in {
+  animation: volt-spin-in 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.volt-press {
+  transition: transform 120ms ease-out;
+}
+.volt-press:active {
+  transform: scale(0.97);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .volt-grow,
+  .volt-pop,
+  .volt-spin-in {
+    animation: none;
+  }
+  .volt-press,
+  .volt-press:active {
+    transition: none;
+    transform: none;
+  }
+}
+
 body {
-  font-family: 'Inter', Arial, sans-serif;
-  background: #e6e6e6;
-  color: #242424;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
 }
-.device {
-  width: 375px;
-  min-height: 812px;
-  margin: 24px auto;
-  background: #f3f3f3;
-  border-radius: 32px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  padding-inline: 24px;
-}
-.device h1 { font-family: 'Rubik', Arial, sans-serif; font-size: 24px; margin: 0; }
-.device p { font-family: 'Rubik', Arial, sans-serif; font-size: 16px; line-height: 1.5; margin: 0; color: #707070; }

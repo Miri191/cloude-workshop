@@ -1,137 +1,65 @@
-# סדנת Claude Code · סטודיו UX/UI · אמן דיגיטל
+# Financy
 
-ריפו התרגיל של הסדנה. בונים בו אב-טיפוס לחיץ של שלושה מסכים מאפליקציית Financy, ישר מפיגמה, בעזרת Claude Code.
+A personal finance and savings app prototype: Home, Wallet, Savings and Profile, built in the **Volt** design language with light and dark modes. Front end only — all data is sample data in `src/data/`, and there is no backend.
 
-**קובץ הפיגמה:** https://www.figma.com/design/o47r5B4SktmRMFDx3LkAa1
+## Requirements
 
-| מסך | קישור לפריים |
+- Node.js **22.12 or newer** (required by Vite 8)
+- npm 10+
+
+## Getting started
+
+```bash
+npm ci
+npm run dev
+```
+
+Open http://localhost:5173. The app renders inside a 375px phone frame.
+
+| Script | What it does |
 | --- | --- |
-| Home | https://www.figma.com/design/o47r5B4SktmRMFDx3LkAa1?node-id=7-440 |
-| Wallet | https://www.figma.com/design/o47r5B4SktmRMFDx3LkAa1?node-id=7-590 |
-| Savings | https://www.figma.com/design/o47r5B4SktmRMFDx3LkAa1?node-id=7-363 |
-| Design System | https://www.figma.com/design/o47r5B4SktmRMFDx3LkAa1?node-id=13-464 |
+| `npm run dev` | Dev server with hot reload |
+| `npm run build` | Type-checks (`tsc -b`) and builds to `dist/` |
+| `npm run preview` | Serves the production build locally |
+| `npm run lint` | Lints with Oxlint |
 
----
+## Stack
 
-## לפני הסדנה
+React 19, TypeScript, Vite 8, Tailwind CSS 4 (via `@tailwindcss/vite`), Oxlint. No router or state library: `App.tsx` keeps a small screen stack and the shared state.
 
-מגיעים עם הכל מותקן ומחובר. ההכנה לוקחת 30 עד 45 דקות.
+## Project structure
 
-### מה צריך
-| מה | פרטים |
-| --- | --- |
-| מנוי Claude | בתשלום (Pro ומעלה). Claude Code לא כלול בחשבון החינמי |
-| Claude Desktop | האפליקציה מ-[claude.ai/download](https://claude.ai/download), מעודכנת לגרסה האחרונה |
-| Node.js | גרסת LTS מ-[nodejs.org](https://nodejs.org). נדרש כדי להריץ את הפרויקט |
-| פיגמה | גישה לקובץ התרגיל (קישור למעלה) |
-| GitHub | חשבון חינמי ב-[github.com](https://github.com) |
-
-### שלב 1: חיבור פיגמה ל-Claude Code
-1. באפליקציה פותחים את לשונית **Code**.
-2. כותבים: `תתקין את הפלאגין הרשמי של פיגמה: figma@claude-plugins-official`
-3. פותחים סשן חדש, כותבים `/mcp`, בוחרים **figma** ואז **Authenticate**, ומאשרים בדפדפן.
-4. בודקים: `/mcp` מראה **figma: connected**.
-
-### שלב 2: git ו-GitHub
-1. בלשונית Code כותבים: `תבדוק אם git מותקן, ואם לא תעזור לי להתקין`
-2. אחר כך: `תעזור לי להתקין את GitHub CLI ולהתחבר לחשבון GitHub שלי`
-
-### שלב 3: עותק משלכם של הריפו
-1. בעמוד הריפו ב-GitHub לוחצים **Use this template** ואז **Create a new repository**. נותנים שם ומסמנים **Private**.
-2. בלשונית Code כותבים: `תשכפל את הריפו [הקישור לריפו שלכם] לתיקייה על שולחן העבודה ותפתח אותה`
-3. כותבים: `תתקין את מה שצריך ותריץ את הפרויקט`. נפתח דפדפן עם המסך **"הפרויקט רץ"**.
-
-### בדיקה אחרונה
-מדביקים בסשן חדש, בתוך תיקיית הפרויקט:
 ```
-תבדוק שאני מוכן לסדנה ותחזיר תקין או לא תקין לכל סעיף:
-1. תקרא את CLAUDE.md ואת brief/client-brief.md ותסכם כל אחד בשורה.
-2. תבדוק שפיגמה מחוברת ותתאר את מסך ה-Home מהקישור ב-README.
-3. תבדוק ש-Node.js ו-git מותקנים ושאני מחובר ל-GitHub.
-4. תריץ את הפרויקט ותוודא שהוא עולה בדפדפן.
+src/
+  App.tsx              Screen stack, navigation, shared state (theme, user, preferences, default card)
+  index.css            Volt tokens (light + dark), motion keyframes, Space Grotesk font
+  screens/             HomeScreen, WalletScreen, SavingsScreen, ProfileScreen
+  components/
+    PhoneFrame.tsx     375px frame that applies the theme (data-theme on the .volt root)
+    volt/              All UI components and the inline SVG icon set (icons.tsx)
+  data/                Sample data: profile/user, preferences, club points, cards
+  lib/
+    format.ts          Currency formatting
+    useTheme.ts        Light/dark, saved to localStorage, crossfades via View Transitions
+    usePersistentState.ts + storedData.ts   localStorage-backed state with validation
+    image.ts           Crops uploaded profile photos to 256×256 JPEG
+    motion.ts          Reduced-motion check and the balance count-up hook
+  assets/              Profile photo
 ```
 
----
+## Design
 
-## מה יש בריפו
+**Read [DESIGN.md](DESIGN.md) before changing UI.** It covers the principles (yellow only ever means money coming in; one dark panel per screen), every color token with light/dark values and contrast ratios, the type scale, radii, spacing, motion, each component, and how shared state and persistence work.
 
-| תיקייה / קובץ | מה זה |
-| --- | --- |
-| `CLAUDE.md` | הכללים הקבועים של הפרויקט. Claude קורא אותו בתחילת כל שיחה |
-| `brief/client-brief.md` | הבריף: מטרות, היקף, מה לא בהיקף |
-| `design-system/` | ריק בכוונה. בתרגיל 1 שולפים לכאן את מערכת העיצוב מפיגמה |
-| `assets/` | אייקונים ותמונות שמורדים מפיגמה |
-| `references/` | צילומי מסך של המסכים, להשוואה |
-| `.claude/skills/implement-figma-screen/` | סקיל: איך בונים מסך מפריים בפיגמה |
-| `.claude/skills/rtl-prototype/` | סקיל: איך מתאימים מסך לעברית ו-RTL |
-| `.claude/agents/design-reviewer.md` | סוכן שבודק כל מסך מול פיגמה, הבריף ומערכת העיצוב |
-| `src/` | הקוד. Claude יוצר ומנהל אותו |
+The same screens exist in Figma on the page "Volt — Screens (code)", built from matching variables, text styles and components.
 
----
+## Behaviour worth knowing
 
-## התרגילים
+- **Navigation:** tabs switch between Home, Wallet and Profile; Savings is pushed from Home or Wallet and has a back button. The Stats tab has no screen yet.
+- **Saved in the browser (`localStorage`):** theme, profile details and photo, notification/settings switches, default card. Clear site data to reset.
+- **Theme:** the toggle on Home and the switch in Profile → Settings both flip it. First launch follows the OS setting.
+- **Motion:** a one-time balance intro on the first Home visit per session; press feedback; theme crossfade. Everything respects `prefers-reduced-motion`.
 
-עובדים בסדר. אחרי כל תרגיל שעובד: `תעשה commit`.
+## Not built yet
 
-**1. מערכת העיצוב (20 דק׳)**
-```
-תשלוף מהעמוד Design System בפיגמה את המשתנים מהאוסף Financy ואת סגנונות הטקסט Financy/
-ל-design-system/tokens.css, ואת הקומפוננטות ל-design-system/components.md.
-תציג תוכנית לפני שאתה מתחיל.
-```
-
-**2. מסך Home (30 דק׳)**
-```
-תבנה את מסך ה-Home מהפריים הזה: [קישור Home]
-תשתמש בטוקנים ובקומפוננטות, ותוריד את כל האייקונים ל-assets.
-```
-בסוף: `תצלם את המסך שבנית ותשווה לפיגמה. מה שונה?`
-
-**3. Wallet ו-Savings במקביל (20 דק׳)**
-```
-תבנה את מסכי Wallet ו-Savings במקביל, סוכן נפרד לכל מסך, ותחבר את שלושת המסכים לניווט התחתון.
-```
-
-**4. בדיקה עם הסוכן הבודק (10 דק׳)**
-```
-@design-reviewer תבדוק את שלושת המסכים
-```
-מתקנים את מה שעלה, ושואלים שוב.
-
-**5. עברית ו-RTL (20 דק׳)**
-```
-תתאים את מסך Savings לעברית ו-RTL לפי הסקיל rtl-prototype.
-```
-
-**6. שמירה ושיתוף (5 דק׳)**
-```
-תעשה commit ותדחוף ל-GitHub.
-```
-
----
-
-## קיצורים שימושיים
-
-| פקודה | מה היא עושה |
-| --- | --- |
-| `Shift+Tab` | Plan mode: תוכנית לפני קוד |
-| `Esc` | עוצר את Claude באמצע |
-| `@file` | מפנה לקובץ מסוים |
-| `/clear` | שיחה נקייה למשימה חדשה |
-| `/mcp` | בדיקת החיבור לפיגמה |
-| `/rewind` | חזרה לנקודה מוקדמת בשיחה |
-
-## אם משהו לא עובד
-
-| תקלה | מה עושים |
-| --- | --- |
-| הפרויקט לא עולה | `תבדוק למה npm run dev לא עובד ותתקן` |
-| `npm` לא מוכר | Node.js לא מותקן. מתקינים LTS מ-nodejs.org ופותחים סשן חדש |
-| פיגמה לא מחוברת | `/mcp`, בוחרים figma ו-Authenticate |
-| פיגמה מופיעה פעמיים | `תבדוק עם claude mcp list אם פיגמה מוגדרת פעמיים ותשאיר רק אחת` |
-| Claude שולף גם את האוסף Tokens | מזכירים לו: רק האוסף Financy (כתוב גם ב-CLAUDE.md) |
-| אייקונים חסרים או הפוכים | `תוריד מחדש את האייקונים של הפריים הזה ל-assets ותשווה לצילום` |
-
----
-
-עיצוב המסכים מבוסס על **Financy – Fintech App** מ-Figma Community. נתוני דמה בלבד.
+These controls render but do nothing: Add card, More options, transaction filter, notifications bell, "See All" on Earnings and Transactions, "See detail" on goals, "Add savings goal", and the Currency/Language settings. The sample data from the original Figma file is not internally consistent; see "Data notes" in DESIGN.md.
