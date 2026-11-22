@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Financy — פרופיל</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Google+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <div class="phone theme-midnight">
+
+    <!-- Status bar -->
+    <div class="status-bar" aria-hidden="true">
+      <img class="sb-notch" src="assets/notch.svg" width="32" height="32" alt="" />
+      <img class="sb-time" src="assets/time.svg" width="54" height="21" alt="" />
+      <img class="sb-signal" src="assets/mobile-signal.svg" width="17" height="10.667" alt="" />
+      <img class="sb-wifi" src="assets/wifi.svg" width="15.2725" height="10.966" alt="" />
+      <img class="sb-battery-outline" src="assets/battery-outline.svg" width="22" height="11.3333" alt="" />
+      <img class="sb-battery-cap" src="assets/battery-cap.svg" width="1.32804" height="4" alt="" />
+      <img class="sb-battery-fill" src="assets/battery-fill.svg" width="18" height="7.33333" alt="" />
+    </div>
+
+    <!-- Header -->
+    <header class="h-bar">
+      <span aria-hidden="true"></span>
+      <h1 class="h-bar-title">פרופיל</h1>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <main class="h-content">
+
+      <!-- Identity + photo -->
+      <section class="p-identity" aria-label="תמונת פרופיל">
+        <div class="p-photo">
+          <img class="p-photo-img" id="photo" src="assets/profile-pic.png" width="88" height="88" alt="תמונת פרופיל" />
+          <label class="p-photo-edit" for="photo-input" aria-label="החלפת תמונת פרופיל">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.6l1.4-2h5l1.4 2h1.6A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.25"/></svg>
+          </label>
+          <input class="p-visually-hidden" id="photo-input" type="file" accept="image/*" />
+        </div>
+        <p class="p-name" id="display-name">C Muthu Krishnan</p>
+        <p class="h-muted" id="display-email">muthu@example.com</p>
+      </section>
+
+      <!-- Club points -->
+      <section class="p-club" aria-label="נקודות מועדון">
+        <span class="h-orb h-orb--club" aria-hidden="true"></span>
+        <span class="h-ring h-ring--club" aria-hidden="true"></span>
+        <div class="p-club-head">
+          <span class="h-on-dark-muted">נקודות מועדון</span>
+          <p class="p-club-points"><span class="p-club-number">2,450</span><span class="p-club-unit">נק׳</span></p>
+        </div>
+        <div class="p-club-tier">
+          <p class="h-goal-row"><span class="p-club-tier-name">דרגת כסף</span><span class="h-on-dark-muted">עוד 550 נק׳ לדרגת זהב</span></p>
+          <span class="h-progress h-progress--on-dark" style="--progress:82%" role="progressbar" aria-label="התקדמות לדרגת זהב" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+        </div>
+        <a class="h-pill h-pill--light" href="#redeem">
+          מימוש נקודות
+          <svg class="h-flip" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </a>
+      </section>
+
+      <!-- Personal details -->
+      <section class="h-section">
+        <div class="h-section-head h-section-head--center">
+          <h2>פרטים אישיים</h2>
+          <button class="p-text-btn" type="button" id="edit-btn" aria-controls="details-form">עריכה</button>
+        </div>
+        <form class="p-panel" id="details-form" novalidate>
+          <div class="p-field">
+            <label class="h-muted" for="f-name">שם מלא</label>
+            <input class="p-input" id="f-name" name="name" type="text" autocomplete="name" value="C Muthu Krishnan" readonly />
+          </div>
+          <div class="p-field">
+            <label class="h-muted" for="f-email">אימייל</label>
+            <input class="p-input" id="f-email" name="email" type="email" autocomplete="email" value="muthu@example.com" readonly />
+          </div>
+          <div class="p-field">
+            <label class="h-muted" for="f-phone">טלפון</label>
+            <input class="p-input" id="f-phone" name="phone" type="tel" autocomplete="tel" value="+91 98765 43210" readonly />
+          </div>
+          <div class="p-field">
+            <label class="h-muted" for="f-birth">תאריך לידה</label>
+            <input class="p-input" id="f-birth" name="birth" type="date" autocomplete="bday" value="1994-03-12" readonly />
+          </div>
+          <p class="p-error" id="details-error" role="alert" hidden></p>
+          <div class="p-form-actions" hidden>
+            <button class="h-pill h-pill--lilac" type="button" id="cancel-btn">ביטול</button>
+            <button class="h-pill h-pill--dark" type="submit">שמירת שינויים</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Payment cards -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>כרטיסי תשלום</h2>
+          <a class="h-link" href="wallet.html">הוספת כרטיס</a>
+        </div>
+        <ul class="h-tx-list">
+          <li><a class="h-tx p-row-link" href="wallet.html">
+            <span class="h-tx-main">
+              <span class="h-tx-icon h-tx-icon--dark"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10.5h18"/><path d="M7 15h3"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name"><bdi dir="ltr">•••• 3456</bdi></span><span class="h-muted">כרטיס ראשי, בתוקף עד 09/23</span></span>
+            </span>
+            <svg class="p-chevron h-flip" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a></li>
+          <li><a class="h-tx p-row-link" href="wallet.html">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10.5h18"/><path d="M7 15h3"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name"><bdi dir="ltr">•••• 3456</bdi></span><span class="h-muted">בתוקף עד 09/23</span></span>
+            </span>
+            <svg class="p-chevron h-flip" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a></li>
+        </ul>
+      </section>
+
+      <!-- Notifications -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>התראות</h2>
+        </div>
+        <div class="p-panel p-panel--list">
+          <label class="p-toggle-row">
+            <span class="p-toggle-text"><span class="h-tx-name">תנועות</span><span class="h-muted">כל תשלום נכנס או יוצא</span></span>
+            <input class="p-switch" type="checkbox" role="switch" name="notify-transactions" checked />
+          </label>
+          <label class="p-toggle-row">
+            <span class="p-toggle-text"><span class="h-tx-name">יעדי חיסכון</span><span class="h-muted">כשיעד מגיע לאבן דרך</span></span>
+            <input class="p-switch" type="checkbox" role="switch" name="notify-savings" checked />
+          </label>
+          <label class="p-toggle-row">
+            <span class="p-toggle-text"><span class="h-tx-name">סיכום חודשי</span><span class="h-muted">הכנסות והוצאות ב־1 בחודש</span></span>
+            <input class="p-switch" type="checkbox" role="switch" name="notify-summary" />
+          </label>
+          <label class="p-toggle-row">
+            <span class="p-toggle-text"><span class="h-tx-name">הטבות מועדון</span><span class="h-muted">דרכים חדשות לצבור ולממש נקודות</span></span>
+            <input class="p-switch" type="checkbox" role="switch" name="notify-club" />
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating tab bar -->
+    <div class="h-tabbar-wrap">
+      <nav class="h-tabbar" aria-label="ניווט ראשי">
+        <a class="h-tab" href="index.html" aria-label="בית">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a2 2 0 0 1-2 2h-3v-6H9v6H6a2 2 0 0 1-2-2z"/></svg>
+        </a>
+        <a class="h-tab" href="wallet.html" aria-label="ארנק">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><path d="M15.5 15h2"/></svg>
+        </a>
+        <a class="h-tab" href="stats.html" aria-label="סטטיסטיקה">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-3"/><path d="M12 16V8"/><path d="M16 16v-5"/></svg>
+        </a>
+        <a class="h-tab h-tab--active" href="profile.html" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.3-3.3 4-5 7-5s5.7 1.7 7 5"/></svg>
+          פרופיל
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var store = {
+        get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+        set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+      };
+
+      // --- Profile photo ---
+      var photo = document.getElementById('photo');
+      var photoInput = document.getElementById('photo-input');
+      var savedPhoto = store.get('profile-photo');
+      if (savedPhoto) photo.src = savedPhoto;
+      photoInput.addEventListener('change', function () {
+        var file = photoInput.files && photoInput.files[0];
+        if (!file || !/^image\//.test(file.type)) return;
+        var reader = new FileReader();
+        reader.onload = function () { photo.src = reader.result; store.set('profile-photo', reader.result); };
+        reader.readAsDataURL(file);
+      });
+
+      // --- Personal details ---
+      var form = document.getElementById('details-form');
+      var editBtn = document.getElementById('edit-btn');
+      var cancelBtn = document.getElementById('cancel-btn');
+      var actions = form.querySelector('.p-form-actions');
+      var error = document.getElementById('details-error');
+      var inputs = Array.prototype.slice.call(form.querySelectorAll('.p-input'));
+      var saved = store.get('profile-details');
+      if (saved) inputs.forEach(function (i) { if (saved[i.name] != null) i.value = saved[i.name]; });
+      var snapshot = {};
+
+      function showIdentity() {
+        document.getElementById('display-name').textContent = form.name.value;
+        document.getElementById('display-email').textContent = form.email.value;
+      }
+      function setEditing(on) {
+        form.classList.toggle('is-editing', on);
+        inputs.forEach(function (i) { i.readOnly = !on; });
+        actions.hidden = !on;
+        editBtn.hidden = on;
+        error.hidden = true;
+        if (on) { inputs.forEach(function (i) { snapshot[i.name] = i.value; }); inputs[0].focus(); }
+      }
+      showIdentity();
+      editBtn.addEventListener('click', function () { setEditing(true); });
+      cancelBtn.addEventListener('click', function () {
+        inputs.forEach(function (i) { i.value = snapshot[i.name]; });
+        setEditing(false);
+        editBtn.focus();
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.name.value.trim()) { error.textContent = 'יש להזין שם מלא.'; error.hidden = false; form.name.focus(); return; }
+        if (!form.email.checkValidity() || !form.email.value) { error.textContent = 'יש להזין כתובת אימייל, למשל name@example.com.'; error.hidden = false; form.email.focus(); return; }
+        var data = {};
+        inputs.forEach(function (i) { data[i.name] = i.value.trim(); i.value = data[i.name]; });
+        store.set('profile-details', data);
+        showIdentity();
+        setEditing(false);
+        editBtn.textContent = 'נשמר';
+        editBtn.focus();
+        setTimeout(function () { editBtn.textContent = 'עריכה'; }, 1600);
+      });
+
+      // --- Notification settings ---
+      var prefs = store.get('notification-prefs') || {};
+      document.querySelectorAll('.p-switch').forEach(function (sw) {
+        if (prefs[sw.name] != null) sw.checked = prefs[sw.name];
+        sw.addEventListener('change', function () { prefs[sw.name] = sw.checked; store.set('notification-prefs', prefs); });
+      });
+    })();
+  </script>
+</body>
+</html>

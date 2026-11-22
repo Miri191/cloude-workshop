@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Financy — סטטיסטיקה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Google+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+  <div class="phone theme-midnight">
+
+    <!-- Status bar -->
+    <div class="status-bar" aria-hidden="true">
+      <img class="sb-notch" src="assets/notch.svg" width="32" height="32" alt="" />
+      <img class="sb-time" src="assets/time.svg" width="54" height="21" alt="" />
+      <img class="sb-signal" src="assets/mobile-signal.svg" width="17" height="10.667" alt="" />
+      <img class="sb-wifi" src="assets/wifi.svg" width="15.2725" height="10.966" alt="" />
+      <img class="sb-battery-outline" src="assets/battery-outline.svg" width="22" height="11.3333" alt="" />
+      <img class="sb-battery-cap" src="assets/battery-cap.svg" width="1.32804" height="4" alt="" />
+      <img class="sb-battery-fill" src="assets/battery-fill.svg" width="18" height="7.33333" alt="" />
+    </div>
+
+    <!-- Header -->
+    <header class="h-bar">
+      <span aria-hidden="true"></span>
+      <h1 class="h-bar-title">סטטיסטיקה</h1>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <main class="h-content">
+
+      <!-- Period switcher -->
+      <div class="s-segmented" role="group" aria-label="תקופה">
+        <button class="s-segment" type="button" data-period="week" aria-pressed="false">שבוע</button>
+        <button class="s-segment" type="button" data-period="month" aria-pressed="true">חודש</button>
+        <button class="s-segment" type="button" data-period="year" aria-pressed="false">שנה</button>
+      </div>
+
+      <!-- Summary: income vs outcome -->
+      <section class="s-summary" aria-label="הכנסות והוצאות">
+        <span class="h-orb h-orb--summary" aria-hidden="true"></span>
+        <span class="h-ring h-ring--summary" aria-hidden="true"></span>
+
+        <div class="s-summary-head">
+          <span class="h-on-dark-muted">נשאר לך <span id="period-label">החודש</span></span>
+          <p class="s-net"><bdi dir="ltr">+$3,000</bdi></p>
+          <span class="h-on-dark-muted">חסכת 15% מההכנסות</span>
+        </div>
+
+        <div class="s-compare">
+          <div class="s-compare-row">
+            <p class="s-compare-label">
+              <span class="s-compare-name">
+                <span class="s-compare-icon"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7 7 17"/><path d="M15 17H7V9"/></svg></span>
+                <span class="h-on-dark-muted">הכנסות</span>
+              </span>
+              <span class="s-compare-value">$20,000</span>
+            </p>
+            <span class="h-progress h-progress--on-dark" style="--progress:100%" role="img" aria-label="הכנסות, 100%"><span></span></span>
+          </div>
+          <div class="s-compare-row">
+            <p class="s-compare-label">
+              <span class="s-compare-name">
+                <span class="s-compare-icon"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></span>
+                <span class="h-on-dark-muted">הוצאות</span>
+              </span>
+              <span class="s-compare-value">$17,000</span>
+            </p>
+            <span class="h-progress h-progress--on-dark s-bar--light" style="--progress:85%" role="img" aria-label="הוצאות, 85% מההכנסות"><span></span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spending by category -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>הוצאות לפי קטגוריה</h2>
+          <a class="h-link" href="wallet.html">הצג הכול</a>
+        </div>
+        <p class="s-total"><span class="h-muted">תנועות אחרונות</span><span class="s-total-value">$337.00</span></p>
+        <ul class="h-tx-list">
+          <li class="s-cat" style="--progress:59%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 11a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
+            <span class="s-cat-body">
+              <span class="s-cat-head">
+                <span class="h-tx-text"><span class="h-tx-name">קניות</span><span class="h-muted">תנועה אחת</span></span>
+                <span class="s-cat-amount"><span class="h-tx-amount"><bdi dir="ltr">−$200.00</bdi></span><span class="h-muted">59%</span></span>
+              </span>
+              <span class="h-progress" role="progressbar" aria-label="קניות, חלק מההוצאות" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </li>
+          <li class="s-cat" style="--progress:27%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+            <span class="s-cat-body">
+              <span class="s-cat-head">
+                <span class="h-tx-text"><span class="h-tx-name">העברות לחיסכון</span><span class="h-muted">2 תנועות</span></span>
+                <span class="s-cat-amount"><span class="h-tx-amount"><bdi dir="ltr">−$90.00</bdi></span><span class="h-muted">27%</span></span>
+              </span>
+              <span class="h-progress" role="progressbar" aria-label="העברות לחיסכון, חלק מההוצאות" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </li>
+          <li class="s-cat" style="--progress:14%">
+            <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="3"/><path d="M2.5 19h19"/></svg></span>
+            <span class="s-cat-body">
+              <span class="s-cat-head">
+                <span class="h-tx-text"><span class="h-tx-name">מנויים</span><span class="h-muted">2 תנועות</span></span>
+                <span class="s-cat-amount"><span class="h-tx-amount"><bdi dir="ltr">−$47.00</bdi></span><span class="h-muted">14%</span></span>
+              </span>
+              <span class="h-progress" role="progressbar" aria-label="מנויים, חלק מההוצאות" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Largest expenses -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>ההוצאות הגדולות</h2>
+        </div>
+        <ul class="h-tx-list">
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 11a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">מצלמת Sony</span><span class="h-muted">קניות</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$200.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">דירה</span><span class="h-muted">חיסכון</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$50.00</bdi></span>
+          </li>
+          <li class="h-tx">
+            <span class="h-tx-main">
+              <span class="h-tx-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg></span>
+              <span class="h-tx-text"><span class="h-tx-name">רכב</span><span class="h-muted">חיסכון</span></span>
+            </span>
+            <span class="h-tx-amount"><bdi dir="ltr">−$40.00</bdi></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Savings progress -->
+      <section class="h-section">
+        <div class="h-section-head">
+          <h2>יעדי חיסכון</h2>
+          <a class="h-link" href="savings.html">הצג הכול</a>
+        </div>
+        <p class="s-total"><span class="h-muted">התקדמות ממוצעת, 4 יעדים</span><span class="s-total-value">53%</span></p>
+        <div class="p-panel s-goals">
+          <div class="s-goal" style="--progress:50%">
+            <p class="s-goal-head"><span class="s-goal-name"><span class="h-tx-name">Iphone 13 Mini</span><span class="h-muted">נותרו 14 ימים</span></span><span class="s-goal-pct">50%</span></p>
+            <span class="h-progress" role="progressbar" aria-label="התקדמות Iphone 13 Mini" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+          </div>
+          <div class="s-goal" style="--progress:60%">
+            <p class="s-goal-head"><span class="s-goal-name"><span class="h-tx-name">Macbook Pro M1</span><span class="h-muted">נותרו 30 ימים</span></span><span class="s-goal-pct">60%</span></p>
+            <span class="h-progress" role="progressbar" aria-label="התקדמות Macbook Pro M1" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+          </div>
+          <div class="s-goal" style="--progress:50%">
+            <p class="s-goal-head"><span class="s-goal-name"><span class="h-tx-name">רכב</span><span class="h-muted">נותרו 30 ימים</span></span><span class="s-goal-pct">50%</span></p>
+            <span class="h-progress" role="progressbar" aria-label="התקדמות רכב" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+          </div>
+          <div class="s-goal" style="--progress:50%">
+            <p class="s-goal-head"><span class="s-goal-name"><span class="h-tx-name">דירה</span><span class="h-muted">נותרו 3 שנים</span></span><span class="s-goal-pct">50%</span></p>
+            <span class="h-progress" role="progressbar" aria-label="התקדמות דירה" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span></span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating tab bar -->
+    <div class="h-tabbar-wrap">
+      <nav class="h-tabbar" aria-label="ניווט ראשי">
+        <a class="h-tab" href="index.html" aria-label="בית">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a2 2 0 0 1-2 2h-3v-6H9v6H6a2 2 0 0 1-2-2z"/></svg>
+        </a>
+        <a class="h-tab" href="wallet.html" aria-label="ארנק">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><path d="M15.5 15h2"/></svg>
+        </a>
+        <a class="h-tab h-tab--active" href="stats.html" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-3"/><path d="M12 16V8"/><path d="M16 16v-5"/></svg>
+          סטטיסטיקה
+        </a>
+        <a class="h-tab" href="profile.html" aria-label="פרופיל">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.3-3.3 4-5 7-5s5.7 1.7 7 5"/></svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    // Period switcher. The app has one set of figures, so every period shows the same
+    // numbers for now (placeholder); only the label and the pressed state change.
+    (function () {
+      var labels = { week: 'השבוע', month: 'החודש', year: 'השנה' };
+      var label = document.getElementById('period-label');
+      var buttons = document.querySelectorAll('.s-segment');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          label.textContent = labels[btn.dataset.period];
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
